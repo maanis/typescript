@@ -4,3 +4,5 @@ var obj = {
     skills: ['nodejs', 'typescript', 56]
 };
 console.log(obj);
+var skills = ['typescript', 56];
+console.log(skills);

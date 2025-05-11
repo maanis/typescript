@@ -1,4 +1,4 @@
-const obj: {
+let obj: {
     name: string,
     age: number,
     skills: [string, string, number, string?]
@@ -9,3 +9,7 @@ const obj: {
 }
 
 console.log(obj)
+
+const skills: [string, number] = ['typescript', 56]
+
+console.log(skills)
