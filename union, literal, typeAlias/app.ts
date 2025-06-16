@@ -1,6 +1,6 @@
-// !union
+// // !union
 
-// function combine(val1: number | string, val2: number | string) {
+// function combineUnion(val1: number | string, val2: number | string) {
 //     if (typeof val1 === "number" && typeof val1 === "number") {
 //         console.log(+val1 + +val2)
 //     } else {
@@ -8,10 +8,10 @@
 //     }
 // }
 
-// combine(11, 12)
-// combine('Manish', 'Jha')
+// combineUnion(11, 12)
+// combineUnion('Manish', 'Jha')
 
-// *Literal Types
+// // *Literal Types
 
 // function combine(val1: number | string, val2: number | string, conversionTypes: "as-number" | "as-string") {
 //     if (typeof val1 === "number" && typeof val1 === "number" || conversionTypes === "as-number") {
@@ -27,9 +27,10 @@
 // ?Type-Alias
 
 type Combinable = number | string
+type ConversionType = "as-number" | "as-string"
 
 
-function combine(val1: Combinable, val2: Combinable, conversionTypes: "as-number" | "as-string") {
+function combineType(val1: Combinable, val2: Combinable, conversionTypes: ConversionType) {
     if (typeof val1 === "number" && typeof val1 === "number" || conversionTypes === "as-number") {
         console.log(+val1 + +val2)
     } else {
@@ -37,6 +38,20 @@ function combine(val1: Combinable, val2: Combinable, conversionTypes: "as-number
     }
 }
 
-combine(11, 12, "as-number")
-combine('Manish', 'Jha', "as-string")
+combineType(14, 52, "as-number")
+combineType("Manish ", "Jha", "as-string")
+
+
+type User = {
+    name: string
+    age: number
+    skills: string[]
+}
+
+let user: User = {
+    name: 'Max',
+    age: 22,
+    skills: ['react', 'ts']
+}
+
 
