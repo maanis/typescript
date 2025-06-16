@@ -1,21 +1,14 @@
-// ! typeOf
-function combine(id) {
-    if (typeof id === "string") {
-        console.log(id.toUpperCase());
+// // ! typeOf
+function isValid(obj) {
+    return (typeof obj === "object" && obj !== null && typeof obj.name === "string" && typeof obj.age === "number");
+}
+function handleApiRes(data) {
+    if (isValid(data)) {
+        console.log(data);
     }
     else {
-        console.log(id.toFixed(3));
+        console.log('invalid api data');
     }
 }
-combine("max");
-combine(10.25855);
-function show(obj) {
-    if ('skills' in obj) {
-        console.log("Admin: ", obj);
-    }
-    else {
-        console.log("User: ", obj);
-    }
-}
-show({ name: 'Manish', age: 22 });
-show({ name: "Mnish is his Boss", skills: ["MERN stack", "TypeScript"] });
+handleApiRes({ name: "Manish", age: 22 });
+handleApiRes({ age: 25, skills: [25, 23, 45] });
