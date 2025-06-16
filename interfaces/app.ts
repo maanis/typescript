@@ -3,17 +3,19 @@ console.log('Interfaces')
 interface user {
     readonly name: string;
     age: number;
-    greet: (name: string) => void;
+    greet: (name: string) => undefined;
+    desc?: number
 }
 
 let user: user = {
-    name: 'max',
+    name: 'trtr',
     age: 22,
     greet(name) {
-        console.log('heyyyyyyu i am under interface : ', name)
-    }
+        console.log(this.name, this.age, name)
+    },
+    desc: 0
 }
 
-user.greet('Hey max')
+user.greet('tutu')
 
-console.log(user)
+console.log(user.desc ?? 'not available')
